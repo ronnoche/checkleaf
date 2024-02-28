@@ -65,6 +65,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'haml'
 gem "cssbundling-rails"
 gem "devise", "~> 4.9"
 gem "friendly_id", "~> 5.4"
