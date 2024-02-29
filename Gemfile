@@ -66,10 +66,10 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'haml'
 gem "cssbundling-rails"
 gem "devise", "~> 4.9"
 gem "friendly_id", "~> 5.4"
+gem 'haml'
 gem "jsbundling-rails"
 gem "madmin"
 gem "name_of_person", github: "basecamp/name_of_person"
@@ -81,5 +81,6 @@ gem "pretender", "~> 0.3.4"
 gem "pundit", "~> 2.1"
 gem "sidekiq", "~> 6.2"
 gem "sitemap_generator", "~> 6.1"
+gem "view_component"
 gem "whenever", require: false
 gem "responders", github: "heartcombo/responders", branch: "main"

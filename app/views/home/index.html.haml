@@ -1,5 +1,9 @@
-%h1 Welcome to Jumpstart!
-%p.lead
-  Use this document as a way to quickly start any new project.
-  %br/
-  All you get is this text and a mostly barebones HTML document.
+.py-5
+  %section#hero.d-flex.container-fluid.hero-section.py-5
+    .container.text-center
+      = image_tag "logo/CheckLeaf.webp", alt: "Checkleaf Logo", class: "img img-fluid mx-auto d-block w-25"
+      .row.d-flex.align-items-center
+        .col-md-12
+          %h1.fw-bold SLOGAN
+          %p.lead.text-normal.py-2.mb-4 CAPTION
+          = link_to "Get Started", new_user_registration_path, class: "btn btn-shadow me-lg-0 px-4 py-3 fw-bold mb-5"

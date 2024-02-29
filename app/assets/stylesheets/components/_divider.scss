@@ -1,0 +1,10 @@
+.vertical-divider {
+    border: 1px solid black;
+  }
+  
+
+@media (max-width: 768px) { // adjust this value based on the breakpoint you want
+    .vertical-divider {
+      display: none;
+    }
+  }
