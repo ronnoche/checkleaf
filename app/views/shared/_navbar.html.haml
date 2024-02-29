@@ -7,16 +7,18 @@
     = link_to stop_impersonating_madmin_impersonates_path, method: :post do
       = icon("fas", "times")
       Logout
-%nav.navbar.navbar-expand-md.navbar-light.bg-light
+
+%nav.navbar.navbar-expand-sm.navbar-light.bg-light.border-bottom.border-2.border-dark.py-3
   .container.mx-auto
-    = link_to Rails.configuration.application_name, root_path, class: "navbar-brand"
+    = image_tag "logo/CheckLeaf.webp", alt: "Checkleaf Logo", size: "30x30"
+    = link_to Rails.configuration.application_name, root_path, class: "navbar-brand fs-5"
     %button.navbar-toggler{"aria-controls" => "navbarsExample04", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarMain", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarMain.collapse.navbar-collapse
       %ul.navbar-nav.me-auto.mt-2.mt-md-0
       %ul.navbar-nav
-        %li.nav-item= link_to "What's New", announcements_path, class: "nav-link #{unread_announcements(current_user)}"
-        .vertical-divider
+        %li.nav-item.px-2.text-muted= link_to "What's New", announcements_path, class: "text-secondary nav-link #{unread_announcements(current_user)}"
+        
         - if user_signed_in?
           %li.nav-item
             = link_to notifications_path, class: "nav-link" do
@@ -33,5 +35,6 @@
               .dropdown-divider
               = button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"
         - else
-          %li.nav-item= link_to "Sign Up", new_user_registration_path, class: "nav-link"
-          %li.nav-item= link_to "Login", new_user_session_path, class: "nav-link"
+          .vertical-divider.mx-4
+          %li.nav-item.mx-4= link_to "Login", new_user_session_path, class: "nav-link text-dark"
+          %li.nav-item.btn-shadow= link_to "Sign Up", new_user_registration_path, class: "nav-link px-3"
