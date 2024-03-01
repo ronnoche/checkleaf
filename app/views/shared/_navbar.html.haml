@@ -8,6 +8,7 @@
       = icon("fas", "times")
       Logout
 
+-# - if !user_signed_in?
 %nav.navbar.navbar-expand-sm.navbar-light.bg-light.border-bottom.border-2.border-dark.py-3
   .container.mx-auto
     = image_tag "logo/CheckLeaf.webp", alt: "Checkleaf Logo", size: "30x30"
@@ -35,7 +36,7 @@
               .dropdown-divider
               = button_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"
         - else
-          - unless current_page?(new_user_registration_path) || current_page?(new_user_session_path)
-            .vertical-divider.mx-4
-            %li.nav-item.mx-4= link_to "Sign Up", new_user_registration_path, class: "nav-link text-dark "
-            %li.nav-item.btn-shadow= link_to "Login", new_user_session_path, class: "nav-link px-3"
+
+          .vertical-divider.mx-4
+          %li.nav-item.mx-4= link_to "Sign Up", new_user_registration_path, class: "nav-link text-dark "
+          %li.nav-item.btn-shadow= link_to "Login", new_user_session_path, class: "nav-link px-3"
