@@ -1,22 +1,42 @@
 .btn-shadow{
-    background-color: $primary-background-color;
-    color: $primary-font-color;
-    transition: transform 0.2s ease-in-out;
+  background-color: $primary-background-color;
+  color: $primary-font-color;
+  transition: transform 0.2s ease-in-out;
+  border: 1px black solid;
+  border-radius: 5px;
+  box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
     border: 1px black solid;
-    border-radius: 5px;
-    box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, box-shadow 0.3s;
-  
-    &:hover {
-      border: 1px black solid;
-      transform: translateY(2px);
-      background-color: $secondary-background-color;
-      color: $black;
-    }
+    transform: translateY(2px);
+    background-color: $secondary-background-color;
+    color: $black;
   }
+}
+
+@media (max-width: 768px) {
+.btn-shadow{
+  margin-left: .5rem;
+  background-color: inherit;
+  color: inherit;
+  transition: inherit;
+  border: inherit;
+  border-radius: inherit;
+  box-shadow: inherit;
+  transform: none;
+
+  &:hover {
+    border: inherit;
+    transform: none;
+    background-color: inherit;
+    color: inherit;
+  }
+}
+}
 
 .btn-service:hover,
 .btn-service:active {
-  color: $secondary-highlight-color;
-  font-weight: bold;
+color: $secondary-highlight-color;
+font-weight: bold;
 }
