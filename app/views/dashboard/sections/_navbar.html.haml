@@ -1,0 +1,94 @@
+
+%header#header.header.fixed-top.d-flex.align-items-center
+  .d-flex.align-items-center.justify-content-between
+    = link_to root_path, class: "logo d-flex align-items-center text-decoration-none" do
+      = image_tag "logo/CheckLeaf.webp", alt: "Checkleaf Logo", size: "30x30"
+      %span.d-none.d-lg-block.fs-5 CheckLeaf
+    
+  %nav.header-nav.ms-auto
+    %ul.d-flex.align-items-center
+      %li.nav-item.dropdown
+        -# TO-DO: add method to show announcement && alerts here 
+        %a.nav-link.nav-icon{"data-bs-toggle" => "dropdown", :href => "#"} 
+          %i.bi.bi-bell
+          -# TO-DO: number should reflect the unread notifications
+          %span.badge.bg-primary.badge-number 4
+
+        %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.notifications
+          -# TO-DO: "You have #number new notifications" should reflect the unread notifications
+          %li.dropdown-header
+            You have 4 new notifications
+            -# TO-DO: This should redirect to announcement  page
+            %a{:href => "#"}
+              %span.badge.rounded-pill.bg-primary.p-2.ms-2 View all
+          %li
+            %hr.dropdown-divider/
+          %li.notification-item
+            -# TO-DO: Alert Icon, Alert Title, Alert Summary, Time_ago
+            %i.bi.bi-exclamation-circle.text-warning
+            %div
+              %h4 Lorem Ipsum
+              %p Quae dolorem earum veritatis oditseno
+              %p 30 min. ago
+          %li
+            %hr.dropdown-divider/
+          %li.notification-item
+            %i.bi.bi-x-circle.text-danger
+            %div
+              %h4 Atque rerum nesciunt
+              %p Quae dolorem earum veritatis oditseno
+              %p 1 hr. ago
+          %li
+            %hr.dropdown-divider/
+          %li.notification-item
+            %i.bi.bi-check-circle.text-success
+            %div
+              %h4 Sit rerum fuga
+              %p Quae dolorem earum veritatis oditseno
+              %p 2 hrs. ago
+          %li
+            %hr.dropdown-divider/
+          %li.notification-item
+            %i.bi.bi-info-circle.text-primary
+            %div
+              %h4 Dicta reprehenderit
+              %p Quae dolorem earum veritatis oditseno
+              %p 4 hrs. ago
+          %li
+            %hr.dropdown-divider/
+          %li.dropdown-footer
+            -# TO-DO: This should redirect to announcement  page
+            %a.text-decoration-none.text-muted.ps-3{:href => "#"} Show all notifications
+
+      %li.nav-item.dropdown.pe-3
+        %a.nav-link.nav-profile.d-flex.align-items-center.pe-0{"data-bs-toggle" => "dropdown", :href => "#"}
+          -# TO-DO: Show Gravatar on initial login and then show the user's uploaded profile image
+          = image_tag "logo/profile.webp", alt: "Profile", class: "rounded-circle"
+          -# TO-DO: display User.first_name here
+          %span.d-none.d-md-block.dropdown-toggle.ps-2 Ronnie
+        / End Profile Iamge Icon
+        %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.profile
+          %li.dropdown-header
+            -# TO-DO: display User.first_name + User.last_name here
+            %h6 Ronnie Noche
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "users-profile.html"}
+              %i.bi.bi-gear
+              -# TO-DO: redirect to Account Settings: Update Profile, Change Password, and Billing
+              %span Account Settings
+          %li
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "pages-faq.html"}
+              %i.bi.bi-question-circle
+              -# TO-DO: add mail_to: ron@narralabs.com
+              %span Need Help?
+          %li
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "#"}
+              %i.bi.bi-box-arrow-right
+              -# TO-DO: log-out user, end session
+              %span Sign Out
+
