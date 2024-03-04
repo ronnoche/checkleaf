@@ -1,1 +1,39 @@
-%h1 Sidebar
+%aside#sidebar.sidebar
+  %ul#sidebar-nav.sidebar-nav.d-flex.flex-column
+    %li.nav-item
+      =link_to root_path, class: 'nav-link' do
+        %i.bi.bi-grid
+        %span Overview
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-bar-chart
+        %span Dashboard
+        %i.bi.bi-chevron-right.ms-auto
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#tables-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-layout-text-window-reverse
+        %span Runners
+        %i.bi.bi-chevron-right.ms-auto
+
+    %li.text-muted.mt-3.ms-2 Documentation
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed' do
+        %i.bi.bi-question-circle
+        %span F.A.Q
+
+    %li.nav-item
+      = mail_to 'ron@narralabs.com', class: 'nav-link collapsed' do
+        %i.bi.bi-envelope
+        %span Contact Us
+
+    %div.mt-auto
+      %li
+        = link_to terms_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+          %span Terms of Service
+
+      %li
+        = link_to privacy_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+          %span Privacy Policy

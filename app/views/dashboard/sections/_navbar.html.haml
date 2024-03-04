@@ -62,12 +62,6 @@
           %li
             %hr.dropdown-divider/
           %li
-            = mail_to 'ron@narralabs.com', class: 'dropdown-item d-flex align-items-center' do
-              %i.bi.bi-question-circle
-              %span Need Help?
-          %li
-            %hr.dropdown-divider/
-          %li
             = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item d-flex align-items-center' do
               %i.bi.bi-box-arrow-right
               %span Sign Out
