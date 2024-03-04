@@ -29,14 +29,7 @@
                     %strong.me-auto.notification-panel-title= announcement.name
                   .notification-panel-time.text-muted= time_ago_in_words(announcement.published_at) + ' ago'
                   .notification-panel-body= announcement.description
-
-                -# %div
-                -#   %h4= announcement.name
-                -#   %p= announcement.description
-                -#   %p= time_ago_in_words(announcement.published_at) + ' ago'
-          
-
-          
+     
           %li
             %hr.dropdown-divider/
           %li.dropdown-footer
@@ -49,11 +42,11 @@
           -# TO-DO: Show Gravatar on initial login and then show the user's uploaded profile image
           = image_tag "logo/profile.webp", alt: "Profile", class: "rounded-circle"
           -# TO-DO: display User.first_name here
-          %span.d-none.d-md-block.dropdown-toggle.ps-2 Ronnie
+          %span.d-none.d-md-block.dropdown-toggle.ps-2
         %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.profile
           %li.dropdown-header
             -# TO-DO: display User.first_name + User.last_name here
-            %h6 Ronnie Noche
+            %h6= current_user.first_name
             %hr.dropdown-divider/
           %li
             -# TO-DO: redirect to Account Settings & Superadmin settings
