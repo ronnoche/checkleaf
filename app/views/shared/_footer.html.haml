@@ -1,8 +1,9 @@
-%footer.bg-light.footer.mt-auto.py-3
-  .container.d-flex.justify-content-between.mx-auto.text-muted
-    %span
-      © #{Date.today.year} 
-      = link_to "NarraLabs", "https://www.narralabs.com", target: "_blank", class: "text-decoration-none text-reset"
-    %ul.d-inline.float-end.list-inline.mb-0
-      %li.list-inline-item.mr-3= footer_link_to "Terms", terms_path
-      %li.list-inline-item.mr-3= footer_link_to "Privacy", privacy_path
+- unless user_signed_in?
+  %footer.bg-light.footer.mt-auto.py-3
+    .container.d-flex.justify-content-between.mx-auto.text-muted
+      %span
+        © #{Date.today.year} 
+        = link_to "NarraLabs", "https://www.narralabs.com", target: "_blank", class: "text-decoration-none text-reset"
+      %ul.d-inline.float-end.list-inline.mb-0
+        %li.list-inline-item.mr-3= footer_link_to "Terms", terms_path
+        %li.list-inline-item.mr-3= footer_link_to "Privacy", privacy_path
