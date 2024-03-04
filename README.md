@@ -1,24 +1,75 @@
-# README
+# Checkleaf
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Checkleaf is a Rails 7 application that monitors anything online, specifically the following:
+- Website Up
+- Redirect Links
+- SEO Checks
+- RSS 
+    
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+Before you can start the app locally, ensure you have met the following requirements:
 
-* Configuration
+* You have installed the latest version of Ruby and Rails.
 
-* Database creation
+## Installing Checkleaf
 
-* Database initialization
+To install, follow these steps:
 
-* How to run the test suite
+1. Clone the repository:
+    ```
+    git clone https://github.com/ronnoche/wecheck.git
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Navigate into the directory:
+    ```
+    cd repo
+    ```
 
-* Deployment instructions
+3. Install the dependencies:
+    ```
+    bundle install
+    ```
 
-* ...
+4. Set up the database:
+    ```
+    rails db:create db:migrate
+    ```
+
+## Running Checkleaf
+
+To run, follow these steps:
+
+1. Start the server:
+    ```
+    foreman start -f Procfile.dev
+    ```
+
+2. Open your web browser and navigate to:
+    ```
+    http://localhost:5000
+    ```
+
+## Contributing to Checkleaf
+
+To contribute, follow these steps:
+
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>'`
+4. Push to the original branch: `git push origin <project_name>/<location>`
+5. Create the pull request.
+
+Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## Contact
+
+If you want to contact me you can reach me at `ron@narralabs.com`.
+
+## License
+
+This project uses the following license: `MIT License`.
+
