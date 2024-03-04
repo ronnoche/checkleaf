@@ -1,4 +1,3 @@
-
 %header#header.header.fixed-top.d-flex.align-items-center
   .d-flex.align-items-center.justify-content-between
     = link_to root_path, class: "logo d-flex align-items-center text-decoration-none" do
@@ -10,55 +9,40 @@
       %li.nav-item.dropdown
         %a.nav-link.nav-icon{"data-bs-toggle" => "dropdown", :href => "#"} 
           %i.bi.bi-bell
-          -# TO-DO: number should reflect the unread notifications
-          %span.badge.bg-primary.badge-number 4
+          -#   (DONE) TO-DO: number should reflect the unread notifications
+          %span.badge.bg-success.badge-number= unread_announcements(current_user).count
 
         %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.notifications
-          -# TO-DO: "You have #number new notifications" should reflect the unread notifications
+          -#  (DONE) TO-DO: "You have #number new notifications" should reflect the unread notifications
           %li.dropdown-header
-            - unread_notifications_count = Announcement.unread_for(current_user).count
+            - unread_notifications_count = unread_announcements(current_user).count
             You have #{unread_notifications_count} new notifications
             -# (DONE) TO-DO: This should redirect to announcement page
             = link_to announcements_path do
-              %span.badge.rounded-pill.bg-primary.p-2.ms-2 View all
-          %li
-            %hr.dropdown-divider/
-          %li.notification-item
-            -# TO-DO: Alert Icon, Alert Title, Alert Summary, Time_ago
-            %i.bi.bi-exclamation-circle.text-warning
-            %div
-              %h4 Lorem Ipsum
-              %p Quae dolorem earum veritatis oditseno
-              %p 30 min. ago
-          %li
-            %hr.dropdown-divider/
-          %li.notification-item
-            %i.bi.bi-x-circle.text-danger
-            %div
-              %h4 Atque rerum nesciunt
-              %p Quae dolorem earum veritatis oditseno
-              %p 1 hr. ago
-          %li
-            %hr.dropdown-divider/
-          %li.notification-item
-            %i.bi.bi-check-circle.text-success
-            %div
-              %h4 Sit rerum fuga
-              %p Quae dolorem earum veritatis oditseno
-              %p 2 hrs. ago
-          %li
-            %hr.dropdown-divider/
-          %li.notification-item
-            %i.bi.bi-info-circle.text-primary
-            %div
-              %h4 Dicta reprehenderit
-              %p Quae dolorem earum veritatis oditseno
-              %p 4 hrs. ago
+              %span.badge.rounded-pill.bg-success.p-2.ms-2 View all
+          - Announcement.order(published_at: :desc).limit(4).each do |announcement|
+            %li
+              %hr.dropdown-divider/
+              %li.notification-item
+                .bi.bi-exclamation-circle
+                  = link_to announcements_path do
+                    %strong.me-auto.notification-panel-title= announcement.name
+                  .notification-panel-time.text-muted= time_ago_in_words(announcement.published_at) + ' ago'
+                  .notification-panel-body= announcement.description
+
+                -# %div
+                -#   %h4= announcement.name
+                -#   %p= announcement.description
+                -#   %p= time_ago_in_words(announcement.published_at) + ' ago'
+          
+
+          
           %li
             %hr.dropdown-divider/
           %li.dropdown-footer
-            -# TO-DO: This should redirect to announcement  page
-            %a.text-decoration-none.text-muted.ps-3{:href => "#"} Show all notifications
+            -# (DONE)  TO-DO: This should redirect to announcement  page
+            = link_to announcements_path do
+              .text-decoration-none.text-muted.ps-3 Show all notifications
 
       %li.nav-item.dropdown.pe-3
         %a.nav-link.nav-profile.d-flex.align-items-center.pe-0{"data-bs-toggle" => "dropdown", :href => "#"}
@@ -66,29 +50,31 @@
           = image_tag "logo/profile.webp", alt: "Profile", class: "rounded-circle"
           -# TO-DO: display User.first_name here
           %span.d-none.d-md-block.dropdown-toggle.ps-2 Ronnie
-        / End Profile Iamge Icon
         %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.profile
           %li.dropdown-header
             -# TO-DO: display User.first_name + User.last_name here
             %h6 Ronnie Noche
             %hr.dropdown-divider/
           %li
-            %a.dropdown-item.d-flex.align-items-center{:href => "users-profile.html"}
+            -# TO-DO: redirect to Account Settings & Superadmin settings
+            = link_to edit_user_registration_path, class: 'dropdown-item d-flex align-items-center' do
               %i.bi.bi-gear
-              -# TO-DO: redirect to Account Settings: Update Profile, Change Password, and Billing
-              %span Account Settings
+              %span Account
+          - if current_user.admin? && respond_to?(:madmin_root_path)
+            %li
+              .dropdown-divider
+              = link_to madmin_root_path, class: "dropdown-item" do
+                %i.bi.bi-diagram-3
+                %span Admin Settings
           %li
             %hr.dropdown-divider/
           %li
-            %a.dropdown-item.d-flex.align-items-center{:href => "pages-faq.html"}
+            = mail_to 'ron@narralabs.com', class: 'dropdown-item d-flex align-items-center' do
               %i.bi.bi-question-circle
-              -# TO-DO: add mail_to: ron@narralabs.com
               %span Need Help?
           %li
             %hr.dropdown-divider/
           %li
-            %a.dropdown-item.d-flex.align-items-center{:href => "#"}
+            = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item d-flex align-items-center' do
               %i.bi.bi-box-arrow-right
-              -# TO-DO: log-out user, end session
               %span Sign Out
-
