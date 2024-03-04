@@ -22,7 +22,7 @@
               %span.badge.rounded-pill.bg-success.p-2.ms-2 View all
           - Announcement.order(published_at: :desc).limit(4).each do |announcement|
             %li
-              %hr.dropdown-divider/
+              %hr.dropdown-divider
               %li.notification-item
                 .bi.bi-exclamation-circle
                   = link_to announcements_path do
