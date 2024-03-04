@@ -8,7 +8,6 @@
   %nav.header-nav.ms-auto
     %ul.d-flex.align-items-center
       %li.nav-item.dropdown
-        -# TO-DO: add method to show announcement && alerts here 
         %a.nav-link.nav-icon{"data-bs-toggle" => "dropdown", :href => "#"} 
           %i.bi.bi-bell
           -# TO-DO: number should reflect the unread notifications
@@ -17,9 +16,10 @@
         %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.notifications
           -# TO-DO: "You have #number new notifications" should reflect the unread notifications
           %li.dropdown-header
-            You have 4 new notifications
-            -# TO-DO: This should redirect to announcement  page
-            %a{:href => "#"}
+            - unread_notifications_count = Announcement.unread_for(current_user).count
+            You have #{unread_notifications_count} new notifications
+            -# (DONE) TO-DO: This should redirect to announcement page
+            = link_to announcements_path do
               %span.badge.rounded-pill.bg-primary.p-2.ms-2 View all
           %li
             %hr.dropdown-divider/
