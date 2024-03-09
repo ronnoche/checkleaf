@@ -3,19 +3,27 @@
     %li.nav-item
       =link_to root_path, class: 'nav-link' do
         %i.bi.bi-grid
-        %span Overview
+        %span Dashboard
 
     %li.nav-item
       = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
         %i.bi.bi-speedometer2
-        %span Dashboard
-        %i.bi.bi-chevron-right.ms-auto
+        %span Monitoring
 
     %li.nav-item
-      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#tables-nav', 'data-bs-toggle' => 'collapse' do
-        %i.bi.bi-person-walking
-        %span Runners
-        %i.bi.bi-chevron-right.ms-auto
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-shield-check
+        %span Incidents
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-wrench-adjustable-circle
+        %span Maintenance
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-node-plus-fill
+        %span Integrations
 
     %hr.my-4
 
