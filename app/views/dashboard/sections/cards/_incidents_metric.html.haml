@@ -1,0 +1,19 @@
+.card.info-card.checker-card
+  .card-body
+    .d-flex.mb-4.mt-2.justify-content-between
+      %h5.card-title
+        Incidents
+      .mt-2
+        = link_to root_path, class: 'text-decoration-none' do
+          %em.text-muted see incidents
+          %i.bi.bi-arrow-right-short.text-dark
+    .d-flex.align-self-center.ms-3
+      .card-icon.rounded-circle.d-flex.align-items-center.justify-content-center
+        %i.bi.bi-graph-up-arrow.text-danger
+      .ps-3
+        .display-5.text-danger.fw-bold 2 
+        %span.text-danger.small.py-1.ps-1 alerts
+        %span.text-muted.small.d-block.ps-1 last 24 hours
+
+
+ 

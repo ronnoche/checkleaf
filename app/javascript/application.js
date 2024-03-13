@@ -25,4 +25,11 @@ document.addEventListener("turbo:load", () => {
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
   })
+
+  // Add your JavaScript code here
+  if (document.querySelector('.toggle-sidebar-btn')) {
+    document.querySelector('.toggle-sidebar-btn').addEventListener('click', function(e) {
+      document.querySelector('body').classList.toggle('toggle-sidebar')
+    })
+  }
 })

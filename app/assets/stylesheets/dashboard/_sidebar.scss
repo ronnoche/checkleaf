@@ -76,7 +76,6 @@
   .nav-heading {
     font-size: 11px;
     text-transform: uppercase;
-    color: #899bbd;
     font-weight: 600;
     margin: 10px 0 5px 15px;
   }
@@ -86,7 +85,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    color: #4154f1;
+    color: #48AF54;
     transition: 0.3;
     background: #f6f9ff;
     padding: 10px 15px;
@@ -95,24 +94,24 @@
     i {
       font-size: 16px;
       margin-right: 10px;
-      color: #4154f1;
+      color: #0F841D;
     }
 
     &.collapsed {
-      color: #012970;
+      color: #0F841D;
       background: #fff;
 
       i {
-        color: #899bbd;
+        color: #0F841D;
       }
     }
 
     &:hover {
-      color: #4154f1;
+      color: #0F841D;
       background: #f6f9ff;
 
       i {
-        color: #4154f1;
+        color: #0F841D;
       }
     }
 
@@ -136,7 +135,7 @@
       align-items: center;
       font-size: 14px;
       font-weight: 600;
-      color: #012970;
+      color: #0F841D;
       transition: 0.3;
       padding: 10px 0 10px 40px;
 
@@ -149,11 +148,11 @@
 
       &:hover,
       &.active {
-        color: #4154f1;
+        color: #0F841D;
       }
 
       &.active i {
-        background-color: #4154f1;
+        background-color: #0F841D;
       }
     }
   }

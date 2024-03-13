@@ -17,7 +17,7 @@
 
     %li.nav-item
       = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
-        %i.bi.bi-wrench-adjustable-circle
+        %i.bi.bi-tools
         %span Maintenance
 
     %li.nav-item
@@ -37,11 +37,13 @@
         %i.bi.bi-envelope
         %span Contact Us
     
+
     .mt-auto
       %li
-        = link_to terms_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+        = link_to terms_path, class: 'collapsed text-muted text-decoration-none' do
           %span Terms of Service
 
       %li
-        = link_to privacy_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+        = link_to privacy_path, class: 'collapsed text-muted text-decoration-none' do
           %span Privacy Policy
+    .bi.bi-arrow-bar-left.toggle-sidebar-btn.align-self-end

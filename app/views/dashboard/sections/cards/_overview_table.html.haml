@@ -1,0 +1,76 @@
+.card.recent-sales.overflow-auto
+  .filter
+    %a.icon{"data-bs-toggle" => "dropdown", :href => "#"}
+      %i.bi.bi-three-dots
+    %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow
+      %li.dropdown-header.text-start
+        %h6 Filter
+      %li
+        %a.dropdown-item{:href => "#"} Active
+      %li
+        %a.dropdown-item{:href => "#"} Inactive
+      %li
+        %a.dropdown-item{:href => "#"} Paused
+  .card-body
+    %h5.card-title.mb-4.mt-2
+      Overview
+      %span.text-muted.small | Last Check 
+    %table.table.table-borderless.datatable
+      %thead
+        %tr
+          %th{:scope => "col"} Status
+          %th{:scope => "col"} Runner
+          %th{:scope => "col"} Checker
+          %th{:scope => "col"} Details
+          %th{:scope => "col"} Result
+      %tbody
+        %tr
+          %td.text-success.fw-bold Active
+          %td
+            %a.fw-bold.text-dark.text-decoration-none{:href => "#"} Narra Up?
+          %td Web Up
+          %td 
+            %span Last run sucess!
+            %span.d-block Mar 09, 2024 07:51 PM
+          %td
+            %span.badge.bg-success Success
+        %tr
+          %td.text-success.fw-bold Active
+          %td
+            %a.fw-bold.text-dark.text-decoration-none Narra Good?
+          %td SEO
+          %td 
+            %span Below target performance
+            %span.d-block Mar 09, 2024 07:51 PM
+          %td
+            %span.badge.bg-warning Warning
+        %tr
+          %td.text-success.fw-bold Active
+          %td
+            %a.fw-bold.text-dark.text-decoration-none Narralabs
+          %td Response
+          %td 
+            %span No response
+            %span.d-block Mar 09, 2024 8:32 PM
+          %td
+            %span.badge.bg-danger Failed
+        %tr
+          %td.text-danger.fw-bold Inactive
+          %td
+            %a.fw-bold.text-dark.text-decoration-none Custom Link
+          %td Redirect
+          %td 
+            %span Stopped runner since
+            %span.d-block Mar 09, 2024 09:51 PM
+          %td
+            %span.badge.bg-secondary.px-4 —
+        %tr
+          %td.text-warning.fw-bold Paused
+          %td
+            %a.fw-bold.text-dark.text-decoration-none Website Up
+          %td Web up
+          %td 
+            %span Paused runner since
+            %span.d-block Mar 09, 2024 8:51 PM
+          %td
+            %span.badge.bg-secondary.px-4 —
