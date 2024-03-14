@@ -1,33 +1,45 @@
+// Header styles
+.header {
+  // Positioning and size
+  height: 60px;
+  padding-left: 20px;
+
+  // Styling
+  background-color: #fff;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+
+  // Other
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+// Logo styles
 .logo {
   line-height: 1;
 
+  // Media query for larger screens
   @media (min-width: 1200px) {
     width: 280px;
   }
 
+  // Styles for the logo text
   span {
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 700;
     color: #066e12;
   }
 }
 
-.header {
-  transition: all 0.5s;
-  z-index: 997;
-  height: 60px;
-  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
-  padding-left: 20px;
-}
-
+// Styles for the navigation in the header
 .header-nav {
+  // Reset list styles
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
+  // Styles for the navigation icons
   .nav-icon {
     font-size: 22px;
     color: #012970;
@@ -35,6 +47,7 @@
     position: relative;
   }
 
+  // Styles for the avatar in the navigation
   .nav-avatar {
     img {
       max-height: 36px;
@@ -46,6 +59,7 @@
     }
   }
 
+  // Styles for the badge number
   .badge-number {
     position: absolute;
     inset: -2px -5px auto auto;
@@ -54,9 +68,11 @@
     padding: 3px 6px;
   }
 
+  // Styles for the notifications
   .notifications {
     inset: 8px -15px auto auto !important;
 
+    // Styles for individual notification items
     .notification-item {
       display: flex;
       align-items: center;
@@ -69,19 +85,20 @@
       }
 
       &:hover {
-        background-color: #f6f9ff;
+        background-color: #d0d2d6;
       }
     }
   }
 
+  // Styles for the profile dropdown
   .profile {
     min-width: 240px;
     padding-bottom: 0;
     top: 8px !important;
 
+    // Styles for the dropdown header
     .dropdown-header {
       h6 {
-        font-size: 18px;
         margin-bottom: 0;
         font-weight: 600;
         color: #444444;
@@ -92,6 +109,7 @@
       }
     }
 
+    // Styles for the dropdown items
     .dropdown-item {
       font-size: 14px;
       padding: 10px 15px;
@@ -110,6 +128,7 @@
   }
 }
 
+// Styles for the notification panel
 .notification-panel-title{
   font-size: 1rem;
   color: #066e12;
@@ -119,6 +138,7 @@
 .notification-panel-body{
   font-size: .35rem;
 }
+
 .notification-panel-time{
   font-size: .15rem;
 }
