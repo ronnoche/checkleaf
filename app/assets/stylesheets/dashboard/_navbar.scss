@@ -142,3 +142,11 @@
 .notification-panel-time{
   font-size: .15rem;
 }
+
+.cm-logo {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}

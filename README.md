@@ -1,8 +1,8 @@
-# Checkleaf
+# Checkmule
 
 ## Description
 
-Checkleaf is a Rails 7 application that monitors anything online, specifically the following:
+Checkmule is a Rails 7 application that monitors anything online, specifically the following:
 - Website Up
 - Redirect Links
 - SEO Checks
@@ -15,7 +15,7 @@ Before you can start the app locally, ensure you have met the following requirem
 
 * You have installed the latest version of Ruby and Rails.
 
-## Installing Checkleaf
+## Installing Checkmule
 
 To install, follow these steps:
 
@@ -39,7 +39,7 @@ To install, follow these steps:
     rails db:create db:migrate
     ```
 
-## Running Checkleaf
+## Running Checkmule
 
 To run, follow these steps:
 
@@ -53,7 +53,7 @@ To run, follow these steps:
     http://localhost:5000
     ```
 
-## Contributing to Checkleaf
+## Contributing to Checkmule
 
 To contribute, follow these steps:
 

@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   db:
-    container_name: checkleaf-db
+    container_name: checkmule-db
     image: postgres:latest
     environment:
       - POSTGRES_PASSWORD=password
@@ -12,13 +12,13 @@ services:
       - "dbdata:/var/lib/postgresql/data"
 
   redis:
-    container_name: checkleaf-redis
+    container_name: checkmule-redis
     image: redis:alpine
     ports:
       - "6379:6379"
 
   web:
-    container_name: checkleaf-web
+    container_name: checkmule-web
     build: .
     ports:
       - "3000:3000"
@@ -26,7 +26,7 @@ services:
       - db
       - redis
     environment:
-      - DATABASE_URL=postgres://postgres:password@checkleaf-db:5432
+      - DATABASE_URL=postgres://postgres:password@checkmule-db:5432
       - REDIS_URL=redis://redis:6379
       - PORT=3000
       - EDITOR=vim
@@ -38,14 +38,14 @@ services:
     stdin_open: true
 
   worker:
-    container_name: checkleaf-worker
+    container_name: checkmule-worker
     build: .
     depends_on:
       - db
       - redis
     environment:
       - QUEUE=*
-      - DATABASE_URL=postgres://postgres:password@checkleaf-db:5432
+      - DATABASE_URL=postgres://postgres:password@checkmule-db:5432
       - REDIS_URL=redis://redis:6379
     env_file:
       - '.env'
@@ -54,13 +54,13 @@ services:
     command: bundle exec rake resque:work
 
   scheduler:
-    container_name: checkleaf-scheduler
+    container_name: checkmule-scheduler
     build: .
     depends_on:
       - db
       - redis
     environment:
-      - DATABASE_URL=postgres://postgres:password@checkleaf-db:5432
+      - DATABASE_URL=postgres://postgres:password@checkmule-db:5432
       - REDIS_URL=redis://redis:6379
     env_file:
       - '.env'

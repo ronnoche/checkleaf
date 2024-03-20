@@ -34,15 +34,6 @@ en:
     slogan: "An automated web app that checks your app"
     sub_slogan: "Hassle-free setup, no-coding needed, on-time alerts!"
 
-    banner_html: "Check [✔️] it  with Checkmule!"
-
-    caption: "Checkmule constantly monitors:"
-    website_html: "<mark>Website</mark>. Ensures your website's up and running."
-    rss-audio_html: "<mark>RSS Audio</mark>. Monitors RSS feed for any issues."
-    redirect_html: "<mark>Redirect Links</mark>. Verifies that redirect links are working."
-    seo_html: "<mark>SEO</mark>. Checks if your site's SEO is healthy."
-    others_html: "... and many <strong>more</strong>!"
-
     title: "Leave your monitor behind!"
     cta-text: "Free your time! Do more important stuff."
     cta-marketing_html: "Setup your account now and <strong>Checkmule</strong> will alert you for any urgent matter."

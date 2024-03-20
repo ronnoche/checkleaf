@@ -1,10 +1,20 @@
-.py-5
-  %section#hero.d-flex.container-fluid.hero-section.py-5
-    .container.text-center
-      = image_tag "homepage/hero.webp", alt: "Checkmule Logo", class: "img img-fluid mx-auto d-block w-25"
-      
-      .row.d-flex.align-items-center
-        .col-md-12
-          %h1.fw-bold= t("homepage.slogan")
-          %p.lead.text-normal.py-2.mb-4= t("homepage.sub_slogan")
-          = link_to "Get Started", new_user_registration_path, class: "btn btn-shadow me-lg-0 px-4 py-3 fw-bold mb-5"
+%section#hero.d-flex.container-fluid.py-5
+  .container.text-center
+    = image_tag "homepage/hero.webp", alt: "Checkmule Logo", class: "img img-fluid mx-auto d-block w-25"
+    
+    .row.d-flex.align-items-center
+      .col-md-12
+        %h1.fw-bold= t("homepage.slogan")
+        %p.lead.text-normal.py-2.mb-4= t("homepage.sub_slogan")
+
+    .row
+      .col-lg-6.col-xl-5.mx-auto.pt-3
+        .pt-5
+          %h1= t("homepage.title")
+          %p.lead= t("homepage.cta-text")
+        .mb-4
+          %p.text-secondary.py-2= t("homepage.cta-marketing_html")
+        = image_tag "homepage/cta.webp", alt: "Call to Action Image", class: "img img-fluid cta-image w-50 attention", picture_class: "mx-auto"
+
+        .mb-4
+        = link_to "Get Started", new_user_registration_path, class: "btn btn-shadow me-lg-0 px-5 py-3"
