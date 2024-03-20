@@ -1,0 +1,20 @@
+%main#main.main
+  .pagetitle
+    %h1 Dashboard
+   
+  %section.section.dashboard.mt-4
+    .row
+      .col-lg-8
+        .row
+          .col-sm-6
+            = render 'dashboard/sections/cards/runners_metric'
+
+          .col-sm-6
+            = render 'dashboard/sections/cards/incidents_metric'            
+
+          .col-12.my-5
+            = render 'dashboard/sections/cards/overview_table'     
+            
+      .col-lg-4
+        = render 'dashboard/sections/cards/recent_column'     
+        

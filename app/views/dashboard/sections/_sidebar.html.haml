@@ -3,19 +3,27 @@
     %li.nav-item
       =link_to root_path, class: 'nav-link' do
         %i.bi.bi-grid
-        %span Overview
+        %span Dashboard
 
     %li.nav-item
       = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
-        %i.bi.bi-bar-chart
-        %span Dashboard
-        %i.bi.bi-chevron-right.ms-auto
+        %i.bi.bi-speedometer2
+        %span Runners
 
     %li.nav-item
-      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#tables-nav', 'data-bs-toggle' => 'collapse' do
-        %i.bi.bi-layout-text-window-reverse
-        %span Runners
-        %i.bi.bi-chevron-right.ms-auto
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-shield-check
+        %span Alerts
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-tools
+        %span Maintenance
+
+    %li.nav-item
+      = link_to root_path, class: 'nav-link collapsed', 'data-bs-target' => '#charts-nav', 'data-bs-toggle' => 'collapse' do
+        %i.bi.bi-node-plus-fill
+        %span Integrations
 
     %hr.my-4
 
@@ -29,11 +37,12 @@
         %i.bi.bi-envelope
         %span Contact Us
     
+
     .mt-auto
       %li
-        = link_to terms_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+        = link_to terms_path, class: 'collapsed text-muted text-decoration-none' do
           %span Terms of Service
 
       %li
-        = link_to privacy_path, class: 'nav-link collapsed text-muted text-decoration-none' do
+        = link_to privacy_path, class: 'collapsed text-muted text-decoration-none' do
           %span Privacy Policy

@@ -1,3 +1,4 @@
+// Styles for the sidebar navigation container
 #sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -5,30 +6,27 @@
   height: 100%; 
 }
 
+// Base styles for the sidebar
 .sidebar {
+  // Positioning and size
   position: fixed;
   top: 60px;
   left: 0;
   bottom: 0;
   width: 300px;
+
+  // Styling
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+
+  // Other
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
   overflow-y: auto;
-  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
-
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-    background-color: #fff;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #aab7cf;
-  }
 }
 
+// Media queries for responsive design
 @media (max-width: 1199px) {
   .sidebar,
   .toggle-sidebar .sidebar {
@@ -58,6 +56,7 @@
   }
 }
 
+// Styles for the navigation items in the sidebar
 .sidebar-nav {
   padding: 0;
   margin: 0;
@@ -73,87 +72,43 @@
     margin-bottom: 5px;
   }
 
-  .nav-heading {
-    font-size: 11px;
-    text-transform: uppercase;
-    color: #899bbd;
-    font-weight: 600;
-    margin: 10px 0 5px 15px;
-  }
-
   .nav-link {
+    // Flexbox for alignment
     display: flex;
     align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    color: #4154f1;
-    transition: 0.3;
+
+    // Text styles
+    color: #48AF54;
+
+    // Background and border
     background: #f6f9ff;
-    padding: 10px 15px;
     border-radius: 4px;
 
+    // Other
+    transition: 0.3;
+    padding: 10px 15px;
+
     i {
-      font-size: 16px;
       margin-right: 10px;
-      color: #4154f1;
+      color: #0F841D;
     }
 
+    // Styles for collapsed and hover states
     &.collapsed {
-      color: #012970;
+      color: #0F841D;
       background: #fff;
 
       i {
-        color: #899bbd;
+        color: #0F841D;
       }
     }
 
     &:hover {
-      color: #4154f1;
+      color: #0F841D;
       background: #f6f9ff;
 
       i {
-        color: #4154f1;
-      }
-    }
-
-    .bi-chevron-down {
-      margin-right: 0;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    &:not(.collapsed) .bi-chevron-down {
-      transform: rotate(180deg);
-    }
-  }
-
-  .nav-content {
-    padding: 5px 0 0 0;
-    margin: 0;
-    list-style: none;
-
-    a {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      font-weight: 600;
-      color: #012970;
-      transition: 0.3;
-      padding: 10px 0 10px 40px;
-
-      i {
-        font-size: 6px;
-        margin-right: 8px;
-        line-height: 0;
-        border-radius: 50%;
-      }
-
-      &:hover,
-      &.active {
-        color: #4154f1;
-      }
-
-      &.active i {
-        background-color: #4154f1;
+        color: #0F841D;
       }
     }
   }

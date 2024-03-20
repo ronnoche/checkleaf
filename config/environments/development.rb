@@ -22,7 +22,7 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
     config.action_controller.perform_caching = true
-    config.action_controller.enable_fragment_cache_logging = true
+    config.action_controller.enable_fragment_cache_logging = true 
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -63,6 +63,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.debug = true
   config.assets.quiet = true
+  config.assets.compile = true
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

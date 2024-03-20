@@ -1,24 +1,10 @@
 .main-dashboard {
     margin-top: 60px;
-    padding: 20px 30px;
     transition: all 0.3s;
 }
 
 @media (max-width: 1199px) {
   #main {
-    padding: 20px;
+    padding: 5px;
   }
-}
-
-.notification-panel-title{
-  font-size: 1.33rem;
-  color: #012970;
-  text-decoration: none;
-}
-
-.notification-panel-body{
-  font-size: .5rem;
-}
-.notification-panel-time{
-  font-size: .25rem;
 }
