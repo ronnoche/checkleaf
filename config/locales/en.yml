@@ -1,6 +1,6 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
 #
 # To use the locales, use `I18n.t`:
 #
@@ -16,16 +16,33 @@
 #
 # This would use the information in config/locales/es.yml.
 #
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
 #
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
+# true, false, on, off, yes, no
 #
-#     en:
-#       "yes": yup
-#       enabled: "ON"
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  homepage:
+    slogan: "An automated web app that checks your app"
+    sub_slogan: "Hassle-free setup, no-coding needed, on-time alerts!"
+
+    banner_html: "Check [✔️] it  with Checkmule!"
+
+    caption: "Checkmule constantly monitors:"
+    website_html: "<mark>Website</mark>. Ensures your website's up and running."
+    rss-audio_html: "<mark>RSS Audio</mark>. Monitors RSS feed for any issues."
+    redirect_html: "<mark>Redirect Links</mark>. Verifies that redirect links are working."
+    seo_html: "<mark>SEO</mark>. Checks if your site's SEO is healthy."
+    others_html: "... and many <strong>more</strong>!"
+
+    title: "Leave your monitor behind!"
+    cta-text: "Free your time! Do more important stuff."
+    cta-marketing_html: "Setup your account now and <strong>Checkmule</strong> will alert you for any urgent matter."

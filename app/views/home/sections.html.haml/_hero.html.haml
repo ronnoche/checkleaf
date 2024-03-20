@@ -1,10 +1,12 @@
 .py-5
   %section#hero.d-flex.container-fluid.hero-section.py-5
     .container.text-center
-      = image_tag "homepage/hero.webp", alt: "Checkmule Logo", class: "img img-fluid mx-auto d-block w-25"
-      
+      = render PictureComponent.new "landing/hero",
+        alt: "Landing Image",
+        picture_class: " ",
+        image_class: "img img-fluid mx-auto d-block w-25"
       .row.d-flex.align-items-center
         .col-md-12
-          %h1.fw-bold= t("homepage.slogan")
-          %p.lead.text-normal.py-2.mb-4= t("homepage.sub_slogan")
+          %h1.fw-bold= t(".slogan")
+          %p.lead.text-normal.py-2.mb-4= t(".caption")
           = link_to "Get Started", new_user_registration_path, class: "btn btn-shadow me-lg-0 px-4 py-3 fw-bold mb-5"
